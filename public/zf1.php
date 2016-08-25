@@ -9,7 +9,7 @@
 
 defined('APPLICATION_PATH')
 || define(
-    'APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application')
+    'APPLICATION_PATH', realpath(dirname(__FILE__) . '/../legacy/application')
 );
 
 define(
@@ -22,7 +22,7 @@ set_include_path(
     implode(
         PATH_SEPARATOR, [
             '.',
-            dirname(dirname(__FILE__)) . '/library',
+            dirname(dirname(__FILE__)) . '/legacy/library',
         ]
     )
 );
