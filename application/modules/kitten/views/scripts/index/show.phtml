@@ -1,0 +1,40 @@
+<?php
+/**
+ * ZF1 legacy application
+ *
+ * @author     Ralf Eggert <ralf@travello.de>
+ * @link       https://github.com/zf3buch/zf1legacy
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ */
+
+$this->headTitle($this->kitten['name']);
+?>
+<h1><?php echo $this->kitten['name']; ?></h1>
+<?php
+$kittenLink = $this->url(
+    [
+        'module'     => 'kitten',
+        'controller' => 'kitten',
+        'action'     => 'show',
+        'id'         => $this->kitten['id'],
+    ]
+);
+?>
+<p>
+    <a href="<?php echo $this->url(['module' => 'kitten'], null, true); ?>" class="btn btn-success">
+        Alle Katzenbabies
+    </a>
+</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a href="<?php echo $kittenLink; ?>">
+            <?php echo $this->kitten['name'] ?>
+        </a>
+    </div>
+    <div class="panel-body">
+        <a href="<?php echo $kittenLink; ?>">
+            <img src="<?php echo $this->kitten['image'] ?>"
+                 class="img-responsive">
+        </a>
+    </div>
+</div>
