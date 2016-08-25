@@ -10,6 +10,12 @@
 $this->headTitle('Alle Katzenbabies!');
 ?>
 <h1>Alle Katzenbabies!</h1>
+<p>
+    <a href="<?php echo $this->url(['module' => 'default'], null, true); ?>"
+       class="btn btn-success">
+        Zurück Startseite
+    </a>
+</p>
 <div class="row">
     <?php foreach ($this->allKitten as $kitten): ?>
         <?php

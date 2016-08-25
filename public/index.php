@@ -7,9 +7,11 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
+define('PROJECT_ROOT', realpath(__DIR__ . '/..'));
+
 defined('APPLICATION_PATH')
 || define(
-    'APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application')
+    'APPLICATION_PATH', PROJECT_ROOT . '/application'
 );
 
 define(
@@ -19,12 +21,7 @@ define(
 );
 
 set_include_path(
-    implode(
-        PATH_SEPARATOR, [
-            '.',
-            dirname(dirname(__FILE__)) . '/library',
-        ]
-    )
+    implode(PATH_SEPARATOR, ['.', PROJECT_ROOT . '/library'])
 );
 
 // Load Zend_Application
