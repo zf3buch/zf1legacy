@@ -9,8 +9,6 @@
 
 return [
     'modules' => [
-        'ZendDeveloperTools',
-        'SanSessionToolbar',
     ],
 
     'module_listener_options' => [

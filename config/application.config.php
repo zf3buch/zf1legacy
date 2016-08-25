@@ -9,6 +9,11 @@
 
 return [
     'modules'                 => [
+        'Zend\Session',
+        'Zend\Router',
+        'Zend\Validator',
+        'Kitten',
+        'Application',
     ],
     'module_listener_options' => [
         'module_paths'             => [
