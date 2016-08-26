@@ -7,7 +7,33 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
+use Application\Controller\IndexController;
+use Application\Controller\IndexControllerFactory;
+use Zend\Router\Http\Literal;
+
 return [
+    'router' => [
+        'routes' => [
+            'home' => [
+                'type'          => Literal::class,
+                'options'       => [
+                    'route'    => '/',
+                    'defaults' => [
+                        'controller' => IndexController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+        ],
+    ],
+
+    'controllers' => [
+        'factories' => [
+            IndexController::class => IndexControllerFactory::class,
+        ],
+    ],
+
+
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
