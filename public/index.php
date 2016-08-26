@@ -7,8 +7,7 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-use Zend\Mvc\Application;
-use Zend\Stdlib\ArrayUtils;
+use Interop\Container\ContainerInterface;
 
 define('PROJECT_ROOT', realpath(__DIR__ . '/..'));
 
@@ -27,11 +26,8 @@ require_once PROJECT_ROOT . '/vendor/autoload.php';
 
 chdir(dirname(__DIR__));
 
-$appConfig = require PROJECT_ROOT . '/config/application.config.php';
+/** @var ContainerInterface $container */
+$container = require PROJECT_ROOT . '/config/container.php';
 
-$configFile = PROJECT_ROOT . '/config/' . APPLICATION_ENV . '.config.php';
-if (file_exists($configFile)) {
-    $appConfig = ArrayUtils::merge($appConfig, require $configFile);
-}
-
-Application::init($appConfig)->run();
+// run the application
+$app = $container->get(Zend\Expressive\Application::class)->run();

@@ -8,13 +8,14 @@
  */
 
 return [
-    'modules' => [
-    ],
+    'debug' => false,
 
-    'module_listener_options' => [
-        'config_glob_paths' => [
-            PROJECT_ROOT
-            . '/config/autoload/{,*.}{global,production,local}.php',
+    'config_cache_enabled' => false,
+
+    'zend-expressive' => [
+        'error_handler' => [
+            'template_404'   => 'error::404',
+            'template_error' => 'error::error',
         ],
     ],
 ];

@@ -8,7 +8,7 @@
  */
 
 $this->headTitle()->setSeparator(' - ')->setAutoEscape(false);
-$this->headTitle('ZF1legacy Application (ZF3)');
+$this->headTitle('ZF1legacy Application (Expressive)');
 
 $this->headMeta()->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
 $this->headMeta()->appendName(
@@ -48,7 +48,7 @@ $this->inlineScript()->prependFile(
 <body>
 <div class="container">
     <header>
-        <a href="/">
+        <a href="<?php echo $this->url('home'); ?>">
             <img src="/assets/custom/img/logo.png" class="logo">
         </a>
     </header>
@@ -68,12 +68,12 @@ $this->inlineScript()->prependFile(
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/">
+                    <a href="<?php echo $this->url('home'); ?>">
                         Startseite
                     </a>
                 </li>
                 <li>
-                    <a href="/kitten">
+                    <a href="<?php echo $this->url('kitten-list'); ?>">
                         Alle Katzenbabies
                     </a>
                 </li>
@@ -82,7 +82,7 @@ $this->inlineScript()->prependFile(
     </nav>
 </div>
 <div class="container">
-    <?php echo $this->layout()->content; ?>
+    <?php echo $this->content; ?>
 </div>
 <footer id="footer">
     <div class="footer-top"></div>

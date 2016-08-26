@@ -15,11 +15,19 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
+/**
+ * ZF1 legacy application
+ *
+ * @author     Ralf Eggert <ralf@travello.de>
+ * @link       https://github.com/zf3buch/zf1legacy
+ * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
+ */
+
 $this->headTitle('Alle Katzenbabies!');
 ?>
 <h1>Alle Katzenbabies!</h1>
 <p>
-    <a href="/" class="btn btn-success">
+    <a href="<?php echo $this->url('home'); ?>" class="btn btn-success">
         Zurück Startseite
     </a>
 </p>
@@ -27,7 +35,7 @@ $this->headTitle('Alle Katzenbabies!');
     <?php foreach ($this->allKitten as $kitten): ?>
         <?php
         $kittenLink = $this->url(
-            'kitten/action',
+            'kitten-show',
             [
                 'action'     => 'show',
                 'id'         => $kitten['id'],

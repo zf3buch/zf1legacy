@@ -7,41 +7,37 @@
  * @license    http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-use Application\Controller\IndexController;
-use Application\Controller\IndexControllerFactory;
-use Zend\Router\Http\Literal;
-
 return [
-    'router' => [
-        'routes' => [
-            'home' => [
-                'type'          => Literal::class,
-                'options'       => [
-                    'route'    => '/',
-                    'defaults' => [
-                        'controller' => IndexController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
+    'dependencies' => [
+        'factories'  => [
+            Application\Action\HomePageAction::class =>
+                Application\Action\HomePageFactory::class,
         ],
     ],
 
-    'controllers' => [
-        'factories' => [
-            IndexController::class => IndexControllerFactory::class,
+    'routes' => [
+        [
+            'name'            => 'home',
+            'path'            => '/',
+            'middleware'      => Application\Action\HomePageAction::class,
+            'allowed_methods' => ['GET'],
         ],
     ],
 
-
-    'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
-        'template_path_stack'      => [
-            APPLICATION_MODULE_ROOT . '/view',
+    'templates' => [
+        'layout' => 'layout/default',
+        'map'    => [
+            'layout/default' => APPLICATION_MODULE_ROOT
+                . '/templates/layout/default.phtml',
+            'error/error'    => APPLICATION_MODULE_ROOT
+                . '/templates/error/error.phtml',
+            'error/404'      => APPLICATION_MODULE_ROOT
+                . '/templates/error/404.phtml',
+        ],
+        'paths'  => [
+            'application' => [APPLICATION_MODULE_ROOT . '/templates/application'],
+            'layout'      => [APPLICATION_MODULE_ROOT . '/templates/layout'],
+            'error'       => [APPLICATION_MODULE_ROOT . '/templates/error'],
         ],
     ],
 ];
