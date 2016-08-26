@@ -1,4 +1,4 @@
-DirectoryIndex index.php zf1.php
+DirectoryIndex index.php
 
 RewriteEngine On
 
@@ -9,6 +9,4 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 
-RewriteRule ^kitten zf3.php [NC,L]
-
-RewriteRule ^.*$ zf1.php [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

@@ -9,6 +9,7 @@
 
 use Kitten\Controller\IndexController;
 use Kitten\Controller\IndexControllerFactory;
+use Kitten\Model\KittenService;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
@@ -50,7 +51,7 @@ return [
 
     'service_manager' => [
         'factories' => [
-            ZF1legacy_Model_KittenService::class => InvokableFactory::class,
+            KittenService::class => InvokableFactory::class,
         ],
     ],
 

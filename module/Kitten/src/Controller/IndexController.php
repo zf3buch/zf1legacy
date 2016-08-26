@@ -9,9 +9,9 @@
 
 namespace Kitten\Controller;
 
+use Kitten\Model\KittenService;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use ZF1legacy_Model_KittenService;
 
 /**
  * Class IndexController
@@ -21,12 +21,12 @@ use ZF1legacy_Model_KittenService;
 class IndexController extends AbstractActionController
 {
     /**
-     * @var ZF1legacy_Model_KittenService
+     * @var KittenService
      */
     private $kittenService;
 
     /**
-     * @param ZF1legacy_Model_KittenService $kittenService
+     * @param KittenService $kittenService
      */
     public function setKittenService($kittenService)
     {

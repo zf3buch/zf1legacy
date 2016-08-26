@@ -10,8 +10,8 @@
 namespace Kitten\Controller;
 
 use Interop\Container\ContainerInterface;
+use Kitten\Model\KittenService;
 use Zend\ServiceManager\Factory\FactoryInterface;
-use ZF1legacy_Model_KittenService;
 
 /**
  * Class IndexControllerFactory
@@ -32,9 +32,7 @@ class IndexControllerFactory implements FactoryInterface
         $requestedName,
         array $options = null
     ) {
-        $kittenService = $container->get(
-            ZF1legacy_Model_KittenService::class
-        );
+        $kittenService = $container->get(KittenService::class);
 
         $controller = new IndexController();
         $controller->setKittenService($kittenService);

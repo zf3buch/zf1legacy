@@ -22,8 +22,7 @@
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Kitten\\": "module/Kitten/src/"
-        },
-        "files": ["legacy/application/models/KittenService.php"]
+        }
     },
     "scripts": {
         "serve": "php -S 0.0.0.0:8080 -t public/ public/index.php"
