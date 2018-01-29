@@ -3,7 +3,7 @@
     "description": "ZF1legacy Example Application to migrate to the Zend Framework 3",
     "type": "project",
     "homepage": "https://github.com/zf3buch/zf1legacy",
-    "license": "The MIT License (MIT)",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ralf Eggert",
