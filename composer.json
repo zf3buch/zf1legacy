@@ -3,7 +3,7 @@
     "description": "ZF1legacy Example Application to migrate to the Zend Framework 3",
     "type": "project",
     "homepage": "https://github.com/zf3buch/zf1legacy",
-    "license": "The MIT License (MIT)",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ralf Eggert",
@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": "^5.6 || ^7.0",
-        "zendframework/zend-component-installer": "^0.3.0",
+        "zendframework/zend-component-installer": "^1.1.1",
         "zendframework/zend-mvc": "^3.0",
         "zendframework/zend-session": "^2.7"
     },
